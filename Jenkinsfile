@@ -12,6 +12,8 @@ node{
 
 //checkoutcode stage
 stage('CheckooutCode'){
+    sendSlackNotifications("STARTED")
+    
 git branch: 'development', credentialsId: '638fcf9e-f596-41f3-9ae2-13bbdccaf292', url: 'https://github.com/devopsgayathri/maven-web-application.git'
 }
 
