@@ -2,7 +2,7 @@ node('nodes'){
     
     try{
     
-    def mavenHome = '/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/maven_3.8.5'
+    def mavenHome = '/node1/tools/hudson.tasks.Maven_MavenInstallation/maven_3.8.5'
    
    echo "The job name is : ${env.JOB_NAME}"
    echo "The build num is : ${env.BUILD_NUMBER}"
