@@ -33,6 +33,7 @@ stage('UploadArtifactsintoNexus'){
 sh "${mavenHome}/bin/mvn deploy"
 }
 
+ /*        
 //Deploy App into Tomcat server
 stage('DeployApp'){
 sshagent(['wPJKgmUC1eVYPIbM+h6nEfdlVGHQ0G1WxOFR4k4LEbM']) {
@@ -40,7 +41,7 @@ sshagent(['wPJKgmUC1eVYPIbM+h6nEfdlVGHQ0G1WxOFR4k4LEbM']) {
 }
 }
 
-
+  */
   
 } //try closing
     
