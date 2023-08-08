@@ -2,7 +2,7 @@ node('nodes'){
     
     try{
     
-    def mavenHome = '/home/ec2-user/node1/tools/hudson.tasks.Maven_MavenInstallation/maven_3.8.5'
+def mavenHome = tool name: 'maven 3.9.3', type: 'maven'
    
    echo "The job name is : ${env.JOB_NAME}"
    echo "The build num is : ${env.BUILD_NUMBER}"
