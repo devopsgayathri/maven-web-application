@@ -24,7 +24,7 @@ sh "${mavenHome}/bin/mvn clean package"
 
 
 //Execute SonarQube Report
-stage('ExecuteSonarQubeReport'){
+//stage('ExecuteSonarQubeReport'){
 sh "${mavenHome}/bin/mvn sonar:sonar"
 }
 
