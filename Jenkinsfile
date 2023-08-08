@@ -17,12 +17,14 @@ stage('CheckooutCode'){
 git branch: 'development', credentialsId: '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', url: 'https://github.com/devopsgayathri/maven-web-application.git'
 }
 
+        
 //Build
 stage('Build'){
 sh "${mavenHome}/bin/mvn clean package"
 }
 
-
+ /* 
+        
 //Execute SonarQube Report
 //stage('ExecuteSonarQubeReport'){
 sh "${mavenHome}/bin/mvn sonar:sonar"
@@ -33,19 +35,22 @@ stage('UploadArtifactsintoNexus'){
 sh "${mavenHome}/bin/mvn deploy"
 }
 
- /*        
+     
 //Deploy App into Tomcat server
 stage('DeployApp'){
 sshagent(['wPJKgmUC1eVYPIbM+h6nEfdlVGHQ0G1WxOFR4k4LEbM']) {
   sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@172.31.47.214:/opt/apache-tomcat-9.0.68/webapps"  
 }
+
+/*
 }
 
-  */
+
   
 } //try closing
 
- /* 
+/*
+
     catch(e){
 currentBuild.result = "FAILURE"
 }
