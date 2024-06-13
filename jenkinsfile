@@ -1,0 +1,31 @@
+node {
+    def mavenHome = tool name: 'maven 3.9.6', type: 'maven'
+
+echo "The job name is : ${env.JOB_NAME}"
+echo "The build num is : ${env.BUILD_NUMBER}"
+echo "The node name is : ${env.NODE_NAME}"
+
+stage('CheckOutCode'){
+    
+    git branch: 'development', credentialsId: '551315dc-f46b-4167-b69d-abb85652b55d', url: 'https://github.com/devopsgayathri/maven-web-application.git'
+}
+
+stage('Build') {
+    sh "${mavenHome}/bin/mvn clean package"
+}
+
+stage('ExecuteSonarQubeReport') {
+    sh "${mavenHome}/bin/mvn clean sonar:sonar"
+}
+
+stage('UploadToNexus') {
+    sh "${mavenHome}/bin/mvn clean deploy"
+}
+
+stage('DeployApp'){
+    sshagent(['17057607-d2af-4edc-8311-cbf1b1031140']) {
+        sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@172.31.12.195:/opt/tomcat9/webapps"
+        
+    }
+}
+}
