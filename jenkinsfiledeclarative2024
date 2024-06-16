@@ -17,6 +17,10 @@ options {
 }
 
 
+parameters {
+  choice choices: ['master', 'development'], description: 'select the branchname..', name: 'BranchName'
+  string defaultValue: 'Gayathri', description: 'change the personname if u want..', name: 'person name'
+}
 
 
 stages{
