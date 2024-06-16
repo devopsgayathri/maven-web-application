@@ -1,6 +1,12 @@
 pipeline {
-    
+
+
+
     agent any
+
+triggers {
+  pollSCM ('* * * * *')
+}
     
     tools {
   maven 'maven 3.9.6'
@@ -10,9 +16,7 @@ options {
   buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '5')
 }
 
-triggers {
-  pollSCM ('* * * * *')
-}
+
 
 
 stages{
