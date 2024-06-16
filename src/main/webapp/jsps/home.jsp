@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+o<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.net.*" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -9,7 +9,7 @@
 </head>
 </head>
 <body>
-<h1 align="center"> declarative way pipeline Updated code in development branch Welcome to Mithun Software Solutions. Bengaluru,Karnataka... </h1>
+<h1 align="center"> helo declarative way pipeline pollscm Updated code in development branch Welcome to Mithun Software Solutions. Bengaluru,Karnataka... </h1>
 <h1 align="center"> Mithun Software Solutions- Very Good Training center for DevOps with AWS in Maratha Halli Bangalore India and also for Job Assitance Job Support also...Teaching Real Time scnerios</h1>
 <hr>
 <br>
